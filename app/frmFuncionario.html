@@ -157,7 +157,7 @@
 
                     <!-- Topbar Search -->
                     <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="post" action="">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar..."
                                 aria-label="Search" aria-describedby="basic-addon2">
@@ -389,55 +389,56 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
-                <div class="form-group">
-                    <label for="apelido-name" class="col-form-label">Apelido</label>
-                    <input type="text" class="form-control" id="apelido-name">
-                    <label for="nome-name" class="col-form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome-name">
-                    <label for="bi-name" class="col-form-label">Bilhete de Identidade</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Nacionalidade</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Naturalidade</label>
-                    <input type="text" class="form-control" id="bi-name">
+            <form method="post" action="./funcionario.php">
+              <div class="form-group">
+                  <label for="apelido" class="col-form-label">Apelido</label>
+                  <input type="text" class="form-control" name="apelido" id="apelido">
+                  <label for="nome" class="col-form-label">Nome</label>
+                  <input type="text" class="form-control" name="nome" id="nome">
+                  <label for="bi" class="col-form-label">Bilhete de Identidade</label>
+                  <input type="text" class="form-control" name="bi" id="bi">
+                  <label for="nacionalidade" class="col-form-label">Nacionalidade</label>
+                  <input type="text" class="form-control" id="nacionalidade" name="nacionalidade">
+                  <label for="naturalidade" class="col-form-label">Naturalidade</label>
+                  <input type="text" class="form-control" name="naturalidade" id="naturalidade">
 
-                    <label for="bi-name" class="col-form-label">Sexo</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">Masculino</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">Femenino</label>
-                        </div>
-                    
-                    <label for="bi-name" class="col-form-label">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Bairro de residencia</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Avenida</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Numero da casa</label>
-                    <input type="text" class="form-control" id="bi-name">
-                </div>
+                  <label for="sexo" class="col-form-label">Sexo</label>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="masculino" id="masculino" value="option1" checked>
+                          <label class="form-check-label" for="masculino">Masculino</label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="feminino" id="feminino" value="option2">
+                          <label class="form-check-label" for="feminino">Femenino</label>
+                      </div>
+                  
+                  <label for="data" class="col-form-label">Data de Nascimento</label>
+                  <input type="date" class="form-control" id="data" name="data">
+                  <label for="bairro" class="col-form-label">Bairro de residencia</label>
+                  <input type="text" class="form-control" id="bairro" name="bairro">
+                  <label for="avenida" class="col-form-label">Avenida</label>
+                  <input type="text" class="form-control" id="avenida" name="avenida">
+                  <label for="casa" class="col-form-label">Numero da casa</label>
+                  <input type="text" class="form-control" id="casa" name="casa">
+              </div>
 
-                <div class="form-group">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                        categoria
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item active" href="#">Action</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </form>
+              <div class="form-group">
+                  <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                      categoria
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                          <li><a class="dropdown-item active" href="#">Action</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
+          </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -453,18 +454,18 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form method="post" action="./crianca.php">
                 <div class="form-group">
-                    <label for="apelido-name" class="col-form-label">Apelido</label>
-                    <input type="text" class="form-control" id="apelido-name">
-                    <label for="nome-name" class="col-form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome-name">
-                    <label for="bi-name" class="col-form-label">Bilhete de Identidade</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Nacionalidade</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Naturalidade</label>
-                    <input type="text" class="form-control" id="bi-name">
+                    <label for="apelidoC" class="col-form-label">Apelido</label>
+                    <input type="text" class="form-control" id="apelidoC" name="apelidoC">
+                    <label for="nomeC" class="col-form-label">Nome</label>
+                    <input type="text" class="form-control" id="nomeC" name="nomeC">
+                    <label for="biC" class="col-form-label">Bilhete de Identidade</label>
+                    <input type="text" class="form-control" id="biC" name="biC">
+                    <label for="nacionalidadeC" class="col-form-label">Nacionalidade</label>
+                    <input type="text" class="form-control" id="nacionalidadeC" name="nacionalidadeC">
+                    <label for="naturalidadeC" class="col-form-label">Naturalidade</label>
+                    <input type="text" class="form-control" id="naturalidadeC" name="naturalidadeC">
 
                     <label for="bi-name" class="col-form-label">Sexo</label>
                         <div class="form-check">
@@ -476,21 +477,22 @@
                             <label class="form-check-label" for="exampleRadios2">Femenino</label>
                         </div>
                     
-                    <label for="bi-name" class="col-form-label">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Bairro de residencia</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Avenida</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Numero da casa</label>
-                    <input type="text" class="form-control" id="bi-name">
+                    <label for="dataC" class="col-form-label">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="dataC" name="dataC">
+                    <label for="bairroC" class="col-form-label">Bairro de residencia</label>
+                    <input type="text" class="form-control" id="bairroC" name="bairroC">
+                    <label for="avenidaC" class="col-form-label">Avenida</label>
+                    <input type="text" class="form-control" id="avenidaC" name="avenidaC">
+                    <label for="casaC" class="col-form-label">Numero da casa</label>
+                    <input type="text" class="form-control" id="casaC" name="casaC">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -506,44 +508,45 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
-                <div class="form-group">
-                    <label for="apelido-name" class="col-form-label">Apelido</label>
-                    <input type="text" class="form-control" id="apelido-name">
-                    <label for="nome-name" class="col-form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome-name">
-                    <label for="bi-name" class="col-form-label">Bilhete de Identidade</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Nacionalidade</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Naturalidade</label>
-                    <input type="text" class="form-control" id="bi-name">
+            <form method="post" action="./encarregado.php">
+              <div class="form-group">
+                  <label for="apelidoE" class="col-form-label">Apelido</label>
+                  <input type="text" class="form-control" id="apelidoE" name="apelidoE">
+                  <label for="nomeE" class="col-form-label">Nome</label>
+                  <input type="text" class="form-control" id="nomeE" name="nomeE">
+                  <label for="biE" class="col-form-label">Bilhete de Identidade</label>
+                  <input type="text" class="form-control" id="biE" name="biE">
+                  <label for="nacionalidadeE" class="col-form-label">Nacionalidade</label>
+                  <input type="text" class="form-control" id="nacionalidadeE" name="nacionalidadeE">
+                  <label for="naturalidadeE" class="col-form-label">Naturalidade</label>
+                  <input type="text" class="form-control" id="naturalidadeE" name="naturalidadeE">
 
-                    <label for="bi-name" class="col-form-label">Sexo</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">Masculino</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">Femenino</label>
-                        </div>
-                    
-                    <label for="bi-name" class="col-form-label">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Bairro de residencia</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Avenida</label>
-                    <input type="text" class="form-control" id="bi-name">
-                    <label for="bi-name" class="col-form-label">Numero da casa</label>
-                    <input type="text" class="form-control" id="bi-name">
-                </div>
-            </form>
+                  <label for="bi-name" class="col-form-label">Sexo</label>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                          <label class="form-check-label" for="exampleRadios1">Masculino</label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                          <label class="form-check-label" for="exampleRadios2">Femenino</label>
+                      </div>
+                  
+                  <label for="dataE" class="col-form-label">Data de Nascimento</label>
+                  <input type="date" class="form-control" id="dataE" name="dataE">
+                  <label for="bairroE" class="col-form-label">Bairro de residencia</label>
+                  <input type="text" class="form-control" id="bairroE" name="bairroE">
+                  <label for="avenidaE" class="col-form-label">Avenida</label>
+                  <input type="text" class="form-control" id="avenidaE" name="avenidaE">
+                  <label for="casaE" class="col-form-label">Numero da casa</label>
+                  <input type="text" class="form-control" id="casaE" name="casaE">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
+          </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -568,12 +571,13 @@
                 <label for="message-text" class="col-form-label">Descricao:</label>
                 <textarea class="form-control" id="message-text"></textarea>
               </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -598,12 +602,13 @@
                 <label for="message-text" class="col-form-label">Descricao:</label>
                 <textarea class="form-control" id="message-text"></textarea>
               </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -636,12 +641,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
-          </div>
+          
         </div>
       </div>
     </div>

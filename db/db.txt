@@ -1,0 +1,105 @@
+use sygec;
+
+create table encarregado(
+  	encarregado_id integer AUTO_INCREMENT PRIMARY KEY,
+  	nome varchar(50),
+    apelido varchar(25),
+    bi_Nr varchar(30),
+    nacionalidade varchar(50),
+    naturalidade varchar(50),
+    data_Nascimento date,
+    sexo ENUM("F","M"),
+    bairro varchar(50),
+    avenida varchar(100),
+    casa_Nr integer,
+    celular integer,
+    email varchar(100)
+),
+
+
+
+create table crianca(
+    crianca_id integer AUTO_INCREMENT PRIMARY KEY,
+    id_encarregado integer not null,
+	nome varchar(50),
+    apelido varchar(25),
+    bi_Nr varchar(30),
+    nacionalidade varchar(50),
+    naturalidade varchar(50),
+    data_Nascimento date,
+    sexo ENUM("F","M"),
+    bairro varchar(50),
+    avenida varchar(100),
+    casa_Nr integer,
+    id_encarregado int not null,
+    CONSTRAINT fk_id_encarregado FOREIGN KEY(id_encarregado) REFERENCES TO encarregado (encarregado_id)
+),
+
+create table propina(
+    propina_id integer AUTO_INCREMENT PRIMARY KEY,
+    mes varchar(30)
+),
+
+create table nivel(
+    nivel_id integer AUTO_INCREMENT PRIMARY KEY,
+    id_propina integer not null,
+ 	valor double,
+    nome varchar(100),
+    descricao varchar(250),
+    CONSTRAINT fk_id_propina FOREIGN KEY (id_propina) REFERENCES to propina(propina_id)
+), 
+
+create table actividade(
+    actividade_id integer AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(100),
+    duracao varchar(50),
+    descricao varchar(250)
+),
+
+create table actividadeXnivel(
+    id_nivel integer not null,
+    id_actividade integer not null,
+    CONSTRAINT fk_id_nivel FOREIGN KEY (id_nivel) REFERENCES to nivel(nivel_id),
+    CONSTRAINT fk_id_actividade FOREIGN KEY (id_actividade) REFERENCES to actividade(actividade_id),
+    PRIMARY KEY (id_nivel, id_actividade)
+)
+
+create table departamento(
+    departamento_id integer AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(150),
+    descricao varchar(300)
+),
+
+create table cargo(
+    cargo_id integer AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(100),
+    descricao varchar(250)
+),
+
+create table funcionario(
+    funcionario_id integer AUTO_INCREMENT PRIMARY KEY,
+    id_departamento integer not null,
+    id_cargo integer not null,
+    nome varchar(50),
+    apelido varchar(25),
+    bi_Nr varchar(30),
+    nacionalidade varchar(50),
+    naturalidade varchar(50),
+    data_Nascimento date,
+    sexo ENUM("F","M"),
+    bairro varchar(50),
+    avenida varchar(100),
+    casa_Nr integer,
+    celular integer,
+    email varchar(100),
+    CONSTRAINT fk_id_departamento FOREIGN KEY (id_departamento) REFERENCES to actividade(departamento_id),
+    CONSTRAINT fk_id_cargo FOREIGN KEY (id_cargo) REFERENCES to cargo (cargo_id)
+),
+
+create table funcionarioXnivel(
+    id_nivel integer not null,
+    id_funcionario integer not null,
+    CONSTRAINT fk_id_nivel FOREIGN KEY (id_nivel) REFERENCES to nivel(nivel_id),
+    CONSTRAINT fk_id_funcionario FOREIGN KEY (id_funcionario) REFERENCES to funcionario(funcionario_id),
+    PRIMARY KEY (id_nivel, id_funcionario)
+),

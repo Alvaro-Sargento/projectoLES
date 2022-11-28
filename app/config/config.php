@@ -1,15 +1,14 @@
 <?php
-  // DB Params
-  define('DB_HOST', 'localhost');
-  define('DB_USER', 'root');
-  define('DB_PASS', '');
-  define('DB_NAME', 'projectoLES');
+   #configurações da base de dados
+   $servidor = 'localhost';
+   $dbname = 'sygec';
+   $usuario = 'root';
+   $usenha = '';
 
-  // App Root
-  define('APPROOT', dirname(dirname(__FILE__)));
-  // URL Root
-  define('URLROOT', 'http://localhost/projectoLES/app');
-  // Site Name
-  define('SITENAME', 'projectoLES');
-  // App Version
-  define('APPVERSION', '1.0.0');
+   #conectando a base de dados
+   try {
+       $con = new PDO ("mysql:host=$servidor;dbname=$dbname", $usuario, $usenha);
+   } catch (PDOException $pe) {
+       die("nao foi possivel se conectar a base de dados $dbname : " . $pe->getMessage());
+   }
+ ?>
